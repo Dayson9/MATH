@@ -1,0 +1,32 @@
+body {
+padding: 0;
+margin: 0;
+}
+
+div{
+width: 100%;
+height: 30vh;
+margin-top: 32vh;
+display: flex;
+flex-direction: column;
+align-content: center;
+justify-content: space-evenly;
+}
+
+div input{
+width: 60%;
+height: 32px;
+align-self: center;
+border: 1px solid dodgerblue;
+}
+
+div button{
+width: 60%;
+align-self: center;
+height: 32px;
+border: 0px solid transparent;
+background: dodgerblue;
+border-radius: 5px;
+color: white;
+font-size: 15px;
+}
