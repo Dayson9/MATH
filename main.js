@@ -62,7 +62,7 @@ const format = (inputString) => {
   const variableRegex = /[0-9]+[a-zA-Z]+/g;
 
   // Define a regular expression for operators.
-  const operatorRegex = /\+|\/|\*|\=/g;
+  const operatorRegex = /\+|-|\/|\*|\=/g;
   // Define regular expressions for brackets
   const bracketRegex = /\[|\]|\(|\)/;
 
@@ -216,4 +216,4 @@ const predict = (input) => {
   return [formattedInput, ...output.filter(Boolean)];
 };
 
-warn(predict("4 * 8 + y = 64 / 2 * -8").join("\n\n") + "//");
+warn(predict("4 * 8 + y = 64 / 2 * 8").join("\n\n") + "//");
