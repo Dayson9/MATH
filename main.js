@@ -71,8 +71,8 @@ const format = (inputString) => {
 
   // Replace operators with spaces around them.
   formattedString = formattedString.replace(operatorRegex, (operator) => " " + operator + " ");
-  
-  
+
+
   // Replace variables with spaces between the number and the letter.
   formattedString = formattedString.replace(variableRegex, (extract) => {
     const number = numberRegex.exec(extract)[0];
@@ -82,9 +82,9 @@ const format = (inputString) => {
 
   // Replace brackets with spaces around them.
   formattedString = formattedString.replace(bracketRegex, (bracket) => " " + bracket + " ");
-  
+
   // Remove all double or more spaces
- formattedString = formattedString.replace(/\s{2,}/g, "");
+  formattedString = formattedString.replace(/\s{2,}/g, "");
 
   // Return the formatted string.
   return formattedString;
@@ -139,7 +139,7 @@ const executables = toExecutable();
 
 
 const evaluateExpr = (str) => {
-  const reg = /-?\d+(\.\d+)?[ ](\+|\*|\/|\-){1}[ ]-?\d+(\.\d+)?/g;
+  const reg = /(- )?\d+(\.\d+)?[ ](\+|\*|\/|\-){1}[ ](- )?\d+(\.\d+)?/g;
 
   const match = reg.exec(str);
   if (match) {
@@ -216,4 +216,4 @@ const predict = (input) => {
   return [formattedInput, ...output.filter(Boolean)];
 };
 
-warn(predict("4 * 8 + y = 64 / 2 * 8").join("\n\n") + "//");
+warn(predict("8 * y = 0").join("\n\n") + "//");
